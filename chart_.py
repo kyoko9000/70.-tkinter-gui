@@ -1,8 +1,10 @@
 # ****************tkinter GUI **********************************
 from tkinter import Tk
-from tkinter.ttk import Button, Label, Style
+from tkinter.ttk import Button, Style, Label
+
 import numpy as np
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+from matplotlib.backends.backend_tkagg import \
+    FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
 
 
@@ -34,11 +36,11 @@ class Window(Tk):
         plt = fig.add_subplot(111)
 
         # list of squares
-        x = np.array([5, 10, 90, 15, 100, 105, 110, 115, 120, 125])
-        y = np.array([240, 250, 260, 270, 280, 290, 300, 310, 320, 330])
+        y = np.array([5, 10, 7])
+        x = np.array([5, 20, 30])
 
         # plotting the graph
-        plt.plot(y, x)
+        plt.plot(x, y)
 
         # creating the Tkinter canvas
         # containing the Matplotlib figure
