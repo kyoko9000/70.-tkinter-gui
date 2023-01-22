@@ -27,7 +27,7 @@ class Window(Tk):
         button_2.place(x=200, y=350, width=100, height=50)
 
         button_3 = Button(self,
-                          text="delete row",
+                          text="delete row1",
                           style="2.TButton",
                           command=self.delete)
         button_3.place(x=350, y=350, width=100, height=50)
