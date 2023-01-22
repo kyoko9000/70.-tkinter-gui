@@ -10,8 +10,8 @@ class Window(Tk):
         self.wm_title("form")
         self.geometry("550x420")
 
-        s = Style()
-        s.configure('2.TButton', font=('arial', 25))
+        style = Style()
+        style.configure('2.TButton', font=('arial', 25))
         exit_button = Button(self,
                              text="play video",
                              style="2.TButton",
