@@ -15,7 +15,7 @@ class Window(Tk):
         exit_button = Button(self,
                              text="show tabel",
                              style="2.TButton",
-                             command=self.receive)
+                             command=self.add_data)
         exit_button.place(x=130, y=350, width=230, height=50)
 
         # show a label
@@ -27,7 +27,7 @@ class Window(Tk):
         self.label.place(x=80, y=20)
         # self.label.pack()
 
-    def receive(self):
+        # ======================treeview===========================
         style = Style()
         style.theme_use('clam')
 
@@ -38,27 +38,28 @@ class Window(Tk):
         style.configure("Treeview.Heading", font=('Calibri', 20, 'bold'))
 
         # Add a Treeview widget
-        tree = Treeview(self.label,
+        self.tree = Treeview(self.label,
                         column=("c1", "c2", "c3"),
                         show='headings',
                         height=6)
-        tree.column("# 1", anchor=CENTER, width=50)
-        tree.heading("# 1", text="ID")
+        self.tree.column("# 1", anchor=CENTER, width=50)
+        self.tree.heading("# 1", text="ID")
 
-        tree.column("# 2", anchor=CENTER, width=150)
-        tree.heading("# 2", text="FName")
+        self.tree.column("# 2", anchor=CENTER, width=150)
+        self.tree.heading("# 2", text="FName")
 
-        tree.column("# 3", anchor=CENTER, width=150)
-        tree.heading("# 3", text="LName")
+        self.tree.column("# 3", anchor=CENTER, width=150)
+        self.tree.heading("# 3", text="LName")
 
+    def add_data(self):
         # Insert the data in Treeview widget
-        tree.insert('', 'end', values=('1', 'Joe', 'Nash'))
-        tree.insert('', 'end', values=('2', 'Emily', 'Mackmohan'))
-        tree.insert('', 'end', values=('3', 'Estilla', 'Roffe'))
-        tree.insert('', 'end', values=('4', 'Percy', 'Andrews'))
-        tree.insert('', 'end', values=('5', 'Stephan', 'Heyward'))
+        self.tree.insert('', 'end', values=('1', 'Joe', 'Nash'))
+        self.tree.insert('', 'end', values=('2', 'Emily', 'Mackmohan'))
+        self.tree.insert('', 'end', values=('3', 'Estilla', 'Roffe'))
+        self.tree.insert('', 'end', values=('4', 'Percy', 'Andrews'))
+        self.tree.insert('', 'end', values=('5', 'Stephan', 'Heyward'))
 
-        tree.pack()
+        self.tree.pack()
 
 
 if __name__ == "__main__":
