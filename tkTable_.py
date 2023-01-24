@@ -1,17 +1,15 @@
-# ****************tkinter GUI **********************************
-from tkinter import Tk, Label, CENTER
-from tkinter.ttk import Button, Style, Treeview
+from tkinter import Tk, CENTER
+from tkinter.ttk import Style, Button, Label, Treeview
 
 
 class Window(Tk):
     def __init__(self):
         super().__init__()
-        self.e = None
         self.wm_title("form")
         self.geometry("550x420")
 
         style = Style()
-        style.configure('2.TButton', font=('arial', 25))
+        style.configure('2.TButton', font=('arial', 30))
         exit_button = Button(self,
                              text="show tabel",
                              style="2.TButton",
@@ -25,7 +23,6 @@ class Window(Tk):
                            borderwidth=1,
                            relief="solid")
         self.label.place(x=80, y=20)
-        # self.label.pack()
 
         # ======================treeview===========================
         style = Style()
@@ -39,9 +36,9 @@ class Window(Tk):
 
         # Add a Treeview widget
         self.tree = Treeview(self.label,
-                        column=("c1", "c2", "c3"),
-                        show='headings',
-                        height=6)
+                             column=("c1", "c2", "c3"),
+                             show='headings',
+                             height=6)
         self.tree.column("# 1", anchor=CENTER, width=50)
         self.tree.heading("# 1", text="ID")
 
