@@ -77,12 +77,12 @@ class Window(Tk):
 
     def edit(self):
         # Get selected item to Edit
-        selected_item = self.tree.selection()[0]
+        selected_item = self.tree.focus()
         print("row number", selected_item)
         # update 1 row in treeview
-        self.tree.item(selected_item, text="blub", values=("num", "foo", "bar"))
+        # self.tree.item(selected_item, text="blub", values=("num", "foo", "bar"))
         # update 1 cell in treeview
-        # self.tree.set(selected_item, column=1, value="your value")
+        self.tree.set(selected_item, column=1, value="your value")
 
     def delete(self):
         # Get selected item to Delete
