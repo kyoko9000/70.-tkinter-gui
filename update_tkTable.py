@@ -12,6 +12,7 @@ class Window(Tk):
         self.geometry("550x420")
 
         style = Style()
+        style.theme_use('clam')  # 'clam', 'alt', 'default', 'classic'
         style.configure('2.TButton', font=('arial', 25))
 
         button_1 = Button(self,
@@ -42,14 +43,11 @@ class Window(Tk):
         # self.label.pack()
 
         # ======================treeview===========================
-        style1 = Style()
-        style1.theme_use('clam')
-
         # Add the rowheight
         # Modify the font of the body
-        style1.configure('Treeview', rowheight=40, font=('arial', 20))
+        style.configure('Treeview', rowheight=40, font=('arial', 20))
         # Modify the font of the headings
-        style1.configure("Treeview.Heading", font=('Calibri', 20, 'bold'))
+        style.configure("Treeview.Heading", font=('Calibri', 20, 'bold'))
 
         # Add a Treeview widget
         self.tree = Treeview(self.label,
