@@ -42,14 +42,14 @@ class Window(Tk):
         # self.label.pack()
 
         # ======================treeview===========================
-        style = Style()
-        style.theme_use('clam')
+        style1 = Style()
+        style1.theme_use('clam')
 
         # Add the rowheight
         # Modify the font of the body
-        style.configure('Treeview', rowheight=40, font=('arial', 20))
+        style1.configure('Treeview', rowheight=40, font=('arial', 20))
         # Modify the font of the headings
-        style.configure("Treeview.Heading", font=('Calibri', 20, 'bold'))
+        style1.configure("Treeview.Heading", font=('Calibri', 20, 'bold'))
 
         # Add a Treeview widget
         self.tree = Treeview(self.label,
@@ -80,9 +80,9 @@ class Window(Tk):
         selected_item = self.tree.focus()
         print("row number", selected_item)
         # update 1 row in treeview
-        # self.tree.item(selected_item, text="blub", values=("num", "foo", "bar"))
+        self.tree.item(selected_item, values=("num", "foo", "bar"))
         # update 1 cell in treeview
-        self.tree.set(selected_item, column=1, value="your value")
+        # self.tree.set(selected_item, column=2, value="your value")
 
     def delete(self):
         # Get selected item to Delete
