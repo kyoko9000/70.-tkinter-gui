@@ -21,7 +21,7 @@ class Window(Tk):
         self.label.place(x=50, y=10)
 
     def receive(self):
-        img = Image.open("1.jpg")
+        img = Image.open("Untitled.png")
         # img = img.resize((100, 200))
         zoom = 2
         pixels_x, pixels_y = img.size
