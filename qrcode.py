@@ -1,6 +1,6 @@
 import cv2
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("Untitled.jpg")
 dectector = cv2.QRCodeDetector()
 
 while True:
