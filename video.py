@@ -10,11 +10,11 @@ class Window(Tk):
         self.wm_title("form")
         self.geometry("550x420")
 
-        style = Style()
-        style.configure('2.TButton', font=('arial', 25))
+        # style = Style()
+        # style.configure('2.TButton', font=('arial', 30))
         exit_button = Button(self,
                              text="play video",
-                             style="2.TButton",
+                             # style="2.TButton",
                              command=self.receive)
         exit_button.place(x=130, y=350, width=230, height=50)
 
@@ -22,8 +22,6 @@ class Window(Tk):
         self.label = Label(self,
                            text='This is a label',
                            font=('arial', 30, 'bold'),
-                           borderwidth=1,
-                           relief="solid",
                            )
         # self.label.place(x=80, y=10)
         self.label.pack()
