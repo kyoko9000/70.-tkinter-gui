@@ -1,6 +1,6 @@
-# ****************tkinter GUI **********************************
-from tkinter import Tk, Label
-from tkinter.ttk import Button, Style
+from tkinter import Tk
+from tkinter.ttk import Button, Label
+
 from tkvideo import tkvideo
 
 
