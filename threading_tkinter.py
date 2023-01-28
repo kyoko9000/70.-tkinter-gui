@@ -68,8 +68,8 @@ class Window(Tk):
         item_count = self.tree.get_children()
         # print(item_count)
         rnum = random.randint(0, 5)
-
         i = 0
+
         for i in range(rnum, 10):
             # update 1 row in treeview
             self.tree.item(item_count[num], values=(num, i, "run"))
