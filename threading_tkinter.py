@@ -11,38 +11,18 @@ class Window(Tk):
         self.wm_title("form")
         self.geometry("550x420")
 
-        style = Style()
-        style.theme_use('clam')  # 'clam', 'alt', 'default', 'classic'
-        style.configure('2.TButton', font=('arial', 25))
-
-        button_1 = Button(self,
-                          text="show tabel",
-                          style="2.TButton",
-                          command=self.add_data)
+        button_1 = Button(self, text="show tabel", command=self.add_data)
         button_1.place(x=50, y=350, width=100, height=50)
 
-        button_2 = Button(self,
-                          text="edit row",
-                          style="2.TButton",
-                          command=self.edit)
+        button_2 = Button(self, text="edit row", command=self.edit)
         button_2.place(x=200, y=350, width=100, height=50)
 
         # show a label
-        self.label = Label(self,
-                           text='This is a label',
-                           font=('arial', 30, 'bold'),
-                           borderwidth=1,
-                           relief="solid")
+        self.label = Label(self, text='This is a label')
         self.label.place(x=80, y=20)
         # self.label.pack()
 
         # ======================treeview===========================
-        # Add the rowheight
-        # Modify the font of the body
-        style.configure('Treeview', rowheight=40, font=('arial', 20))
-        # Modify the font of the headings
-        style.configure("Treeview.Heading", font=('Calibri', 20, 'bold'))
-
         # Add a Treeview widget
         self.tree = Treeview(self.label,
                              column=("c1", "c2", "c3"),
