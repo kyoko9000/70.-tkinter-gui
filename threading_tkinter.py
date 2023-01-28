@@ -12,7 +12,6 @@ class Window(Tk):
         self.stop_thread = 0
         self.count = 3
         self.tree = None
-        self.e = None
         self.wm_title("form")
         self.geometry("550x420")
 
@@ -69,7 +68,6 @@ class Window(Tk):
         item_count = self.tree.get_children()
         # print(item_count)
         rnum = random.randint(0, 5)
-        print(rnum)
 
         i = 0
         for i in range(rnum, 10):
@@ -84,7 +82,7 @@ class Window(Tk):
 
     def stop_threading(self):
         self.stop_thread = 1
-        print(self.stop_thread)
+        print("all thread is stop")
 
 
 if __name__ == "__main__":
