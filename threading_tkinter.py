@@ -49,6 +49,12 @@ class Window(Tk):
 
         self.tree.pack()
 
+    def add_thread(self):
+        for i in range(self.count):
+            self.add_table()
+            thread = threading.Thread(target=self.update_num, args=(i,))
+            thread.start()
+
     def add_table(self):
         item_count = self.tree.get_children()
         if len(item_count) == self.count:
@@ -56,12 +62,6 @@ class Window(Tk):
         else:
             # Insert the data in Treeview widget
             self.tree.insert('', 'end', values=('', '', ''))
-
-    def add_thread(self):
-        for i in range(self.count):
-            self.add_table()
-            thread = threading.Thread(target=self.update_num, args=(i,))
-            thread.start()
 
     def update_num(self, num):
         self.stop_thread = 0
