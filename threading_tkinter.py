@@ -1,25 +1,23 @@
-# ****************tkinter GUI **********************************
 import random
 import threading
 import time
-from tkinter import Tk, Label, CENTER
-from tkinter.ttk import Button, Style, Treeview
+from tkinter import Tk, CENTER
+from tkinter.ttk import Button, Style, Treeview, Label
 
 
 class Window(Tk):
     def __init__(self):
         super().__init__()
-        self.stop_thread = 0
-        self.count = 3
-        self.tree = None
+        self.stop_thread = None
+        self.count = 5
         self.wm_title("form")
         self.geometry("550x420")
 
         button_1 = Button(self, text="start thread", command=self.add_thread)
-        button_1.place(x=50, y=350, width=100, height=50)
+        button_1.place(x=50, y=350)
 
         button_2 = Button(self, text="stop thread", command=self.stop_threading)
-        button_2.place(x=200, y=350, width=100, height=50)
+        button_2.place(x=200, y=350)
 
         # show a label
         self.label = Label(self, text='This is a label')
@@ -66,7 +64,7 @@ class Window(Tk):
         self.stop_thread = 0
         print("thread number: ", num)
         item_count = self.tree.get_children()
-        # print(item_count)
+        print(item_count)
         rnum = random.randint(0, 5)
         i = 0
 
