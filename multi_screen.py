@@ -12,10 +12,13 @@ class Window_1(Toplevel):
         self.label = Label(self, text="hi")
         self.label.pack(expand=True)
 
-        self.button = Button(self, text='sub control', command=self.sub_control)
+        self.button = Button(self, text='sub control')
         self.button.place(x=50, y=150)
 
-    def sub_control(self):
+        self.button_1 = Button(self, text='sub text', command=self.sub_text)
+        self.button_1.place(x=150, y=150)
+
+    def sub_text(self):
         self.label.config(text="lam choi")
 
 
