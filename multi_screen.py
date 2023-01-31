@@ -1,32 +1,12 @@
 from tkinter import Tk, Toplevel
-from tkinter.ttk import Button, Label
-
-
-class Window_1(Toplevel):
-    def __init__(self):
-        super().__init__()
-
-        self.geometry('300x200')
-        self.title('Toplevel Window')
-
-        self.label = Label(self, text="hi")
-        self.label.pack(expand=True)
-
-        self.button = Button(self, text='sub control')
-        self.button.place(x=50, y=150)
-
-        self.button_1 = Button(self, text='sub text', command=self.sub_text)
-        self.button_1.place(x=150, y=150)
-
-    def sub_text(self):
-        self.label.config(text="lam choi")
+from tkinter.ttk import Label, Button
 
 
 class Window(Tk):
     def __init__(self):
         super().__init__()
         self.window_1 = None
-        self.wm_title("form")
+        self.wm_title("main")
         self.geometry("320x200")
 
         self.label = Label(self, text="hi")
@@ -52,6 +32,25 @@ class Window(Tk):
     def sub_control(self):
         self.label.config(text="sub control")
         self.window_1.label.config(text="sub control")
+
+
+class Window_1(Toplevel):
+    def __init__(self):
+        super().__init__()
+        self.geometry('300x200')
+        self.title('sub Window')
+
+        self.label = Label(self, text=" phu ")
+        self.label.pack(expand=True)
+
+        self.button = Button(self, text='sub control')
+        self.button.place(x=50, y=150)
+
+        self.button_1 = Button(self, text='sub text', command=self.sub_text)
+        self.button_1.place(x=150, y=150)
+
+    def sub_text(self):
+        self.label.config(text="lam choi")
 
 
 if __name__ == "__main__":
